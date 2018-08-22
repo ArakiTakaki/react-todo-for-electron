@@ -8,18 +8,21 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "browser-sync": "^2.24.6",
+    "concurrently": "^3.6.1",
     "electron": "^2.0.7",
     "marked": "^0.5.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
-    "readux": "^1.0.0",
+    "redux": "^4.0.0",
     "sequelize": "^4.38.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0"
   },
   "scripts": {
     "start": "yarn run electron ./dist/main.js",
-    "build-js": "yarn run webpack"
+    "dev": "concurrently \"yarn run webpack -w  --mode development\" \"yarn run server\" ",
+    "server": "browser-sync start --config ./server.js",
+    "build-js": "yarn run webpack  --mode production"
   }
 }
