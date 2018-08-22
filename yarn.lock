@@ -4049,10 +4049,6 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-readux@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/readux/-/readux-1.0.0.tgz#18c737075715ac6274e6dc01968a52a1b693ceea"
-
 recompose@^0.28.0:
   version "0.28.2"
   resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.28.2.tgz#19e679227bdf979e0d31b73ffe7ae38c9194f4a7"

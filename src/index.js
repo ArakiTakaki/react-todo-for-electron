@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/configreStore';
 import initialState from './store/state';
 import { Provider } from 'react-redux';
+import Root from './apps/containers/templates/Root'
 
 const store = configureStore(initialState);
 
 ReactDOM.render(
 <Provider store={store}>
-  <h1>ao</h1>
+  <Root />
 </Provider>
 ,document.getElementById('root'));
