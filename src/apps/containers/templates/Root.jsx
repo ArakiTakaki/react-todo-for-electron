@@ -1,20 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
-
-// const mapDispatchToProps = dispatch => ({
-//   actions: bindActionCreators(Actions, dispatch)
-// });
+import * as Actions from '../../../store/actions';
+import { bindActionCreators } from "redux";
 
 class Root extends React.Component {
   constructor(props){
     super(props);
   }
+  componentDidMount() {
+    this.props.actions.getTodo();
+  }
   render() {
-    const {state} = this.props
     console.log(this.props)
     return (
       <div>
-        {state}
+        <h1>
+        {this.props.name}
+        </h1>
       </div>
     );
   }
@@ -23,4 +25,7 @@ class Root extends React.Component {
 const mapStateToProps = state => {
   return state;
 };
-export default connect(mapStateToProps)(Root);
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(Actions, dispatch)
+});
+export default connect(mapStateToProps,mapDispatchToProps)(Root);

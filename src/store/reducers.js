@@ -5,7 +5,8 @@ const reducer = (state, action) => {
   switch(action.type){
     case(Actions.ADD_TODO):
       return { state, todos: [...state.todos, payload.todo] };
-
+    case(Actions.GET_TODO):
+      return state
   }
   return state
 }
