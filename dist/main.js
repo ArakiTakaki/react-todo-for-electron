@@ -23,7 +23,7 @@ app.on("window-all-closed", () => {
 // Electronの初期化完了後に実行
 app.on("ready", () => {
   //ウィンドウサイズを1280*720（フレームサイズを含まない）に設定する
-  mainWindow = new BrowserWindow({width: 1280, height: 720, useContentSize: true});
+  mainWindow = new BrowserWindow({width: 300, height: 500, useContentSize: true});
   //使用するhtmlファイルを指定する
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
