@@ -1,15 +1,20 @@
 
-export const ADD_TODO = "ADD_TODO";
-export const addTodo = (title, description) => ({
+export const ADD_TODO = Symbol('actions');
+export const addTodo = (content) => ({
   type: ADD_TODO,
   payload: {
     todo: {
-      title: title,
-      description: description,
+      content: content,
       state: false
     }
   }
 });
 
-export const GET_TODO = "GET_TODO";
+export const CHANGE_TODO_CHECK = Symbol('actions');
+export const changeTodoCheck = (idx) => ({ type: CHANGE_TODO_CHECK, payload: idx });
+
+export const GET_TODO = Symbol('actions');
 export const getTodo = () => ({ type: GET_TODO });
+
+export const DELETE_TODO = Symbol('actions');
+export const deleteTodo = (idx) => ({ type: DELETE_TODO, payload: idx });

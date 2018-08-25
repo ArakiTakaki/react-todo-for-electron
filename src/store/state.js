@@ -1,11 +1,12 @@
 
 const initialState = {
   name: "guest",
+  now_todo_count: 0,
   todos: [
     {
-      title: "DefaultTitle",
-      description: "DefaultDiscription",
-      state: false
+      content: "DefaultDiscription",
+      state: false,
+      key: 0
     }
   ]
 };
