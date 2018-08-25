@@ -3,10 +3,11 @@ import { Button } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 
-export default Delete = (props) => {
+const Delete = (props) => {
   const {func} = props;
   return(
     <Button
+      name="todo_delete"
       valiant="fab"
       color="primary"
       onClick={func}
@@ -19,3 +20,5 @@ export default Delete = (props) => {
 Delete.propTypes = {
   func: PropTypes.func.isRequired
 }
+
+export default Delete;

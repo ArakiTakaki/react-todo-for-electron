@@ -2,17 +2,17 @@ import React from "react";
 import { connect } from "react-redux";
 import * as Actions from '../../../store/actions';
 import { bindActionCreators } from "redux";
+import TodoList from '../../components/modules/TodoListItem';
 
 class ViewTodos extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   onCheckEvent(event){
     this.props.actions.changeTodoCheck(event.target.value);
   }
   onDeleteEvent(event){
     this.props.actions.deleteTodo(event.target.value);
+  }
+  onEvent(event){
+    console.log(event.target.name);
   }
 
   render() {
@@ -23,20 +23,6 @@ class ViewTodos extends React.Component {
       list.push(
         <div key={i}>
           <p>
-            <input
-              type="checkbox"
-              checked={todos[i].state}
-              value={i}
-              onClick={this.onCheckEvent.bind(this)}/>
-
-            {todos[i].content}
-
-            <button
-              onClick={this.onDeleteEvent.bind(this)}
-              type="button"
-              value={i}>
-              ❌
-            </button>
           </p>
         </div>
       );

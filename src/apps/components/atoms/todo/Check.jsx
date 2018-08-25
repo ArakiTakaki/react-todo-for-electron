@@ -3,10 +3,11 @@ import { IconButton } from '@material-ui/core';
 import { DeleteOutline } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 
-export default Check = (props) => {
+ const Check = (props) => {
   const {func} = props;
   return(
     <IconButton
+      name="todo_check"
       valiant="fab"
       color="primary"
       onClick={func}
@@ -19,3 +20,5 @@ export default Check = (props) => {
 Check.propTypes = {
   func: PropTypes.func.isRequired
 };
+
+export default Check;

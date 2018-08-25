@@ -6,7 +6,7 @@ const reducer = (state, action) => {
 
   switch (action.type) {
     case (Actions.ADD_TODO):
-      if (payload.todo.content == "") { break; }
+      if (payload.todo.content === "") { break; }
       state.now_todo_count++;
       payload.todo.key = state.now_todo_count;
       state.todos = [...state.todos, payload.todo];
@@ -19,6 +19,8 @@ const reducer = (state, action) => {
     case (Actions.DELETE_TODO):
       state.todos.splice(payload,1);
       break;
+    default:
+      return state;
   }
   return Object.assign({}, state);
 }
