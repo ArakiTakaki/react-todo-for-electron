@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../../../store/actions';
+import {Button} from '@material-ui/core';
 
 class AddTodo extends React.Component {
   constructor(props){
@@ -24,6 +25,7 @@ class AddTodo extends React.Component {
   render() {
     return(
       <div>
+        <Button></Button>
         <input
           type="text"
           placeholder="TODOを入力してください。"
