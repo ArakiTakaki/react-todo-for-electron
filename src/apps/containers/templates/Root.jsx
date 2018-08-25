@@ -4,6 +4,7 @@ import * as Actions from '../../../store/actions';
 import { bindActionCreators } from "redux";
 import ViewTodos from "../organisms/ViewTodos";
 import AddTodo from "../organisms/AddTodo";
+import ComponentSample from '../organisms/ComponentSamples';
 
 class Root extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Root extends React.Component {
       <div>
         <ViewTodos/>
         <AddTodo/>
+        <ComponentSample/>
       </div>
     );
   }
