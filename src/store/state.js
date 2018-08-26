@@ -7,6 +7,7 @@ const initialState = {
     {
       content: "DefaultDiscription",
       state: false,
+      detailState: true,
       key: 0
     }
   ]
