@@ -6,6 +6,7 @@ const reducer = (state, action) => {
 
   switch (action.type) {
     case (Actions.ADD_TODO):
+      // validation
       if (state.tmp_todo === "") return state;
       state.now_todo_count++;
       state.todos.push({
@@ -18,10 +19,16 @@ const reducer = (state, action) => {
     case (Actions.GET_TODO):
       break;
     case (Actions.CHANGE_TODO_CHECK):
-      state.todos[payload].state = state.todos[payload].state ? false : true
+      for(let idx in state.todos){
+        if (state.todos[idx].key === Number(payload)){
+          state.todos[idx].state = state.todos[idx].state ? false : true
+        }
+      }
       break;
     case (Actions.DELETE_TODO):
-      state.todos.splice(payload,1);
+      for(let idx in state.todos){
+        if (state.todos[idx].key === Number(payload)) state.todos.splice(idx,1);
+      }
       break;
     case (Actions.INPUT_TODO_TEXT):
       state.tmp_todo = payload;
