@@ -6,32 +6,40 @@ import { Grid, withStyles } from '@material-ui/core';
 const styles = {
   root: {
     alignItems: "center",
+    borderTop: '1px solid #555',
+    padding:'10px 0',
+    '&:first-child':{
+      borderTop: 'none'
+    }
   }
 }
 
 function TodoListItem(props) {
   const { todoKey, content, event, state, detailState, classes } = props
   return (
-    <div>
-      <Grid container spacing={16} className={classes.root}>
+      <Grid
+        container
+        spacing={16}
+        className={classes.root}>
         <Grid item xs={2}>
           <Todo.Check
+            alignItems="center"
+            justify="space-between"
             todoKey={todoKey}
             func={event}
             state={state} />
         </Grid>
-        <Grid item xs={8} >
+        <Grid item xs={7} >
           <Todo.TextContent state={detailState}>
             {content}
           </Todo.TextContent>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Todo.Delete
             todoKey={todoKey}
             func={event} />
         </Grid>
       </Grid>
-    </div>
   )
 }
 

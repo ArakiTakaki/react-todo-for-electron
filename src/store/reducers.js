@@ -33,6 +33,8 @@ const reducer = (state, action) => {
     case (Actions.INPUT_TODO_TEXT):
       state.tmp_todo = payload;
       break;
+    case (Actions.SAVE_TODO_COOKIE):
+      break;
     default:
       return state;
   }

@@ -6,8 +6,9 @@ function TextContent (props) {
   const {state, children} = props;
   return(
     <Typography
-      valiant="title"
+      variant="headline"
       noWrap={state}
+      fullWidth
       style={{ lineHeight:'inherit' }}>
       {children}
     </Typography>

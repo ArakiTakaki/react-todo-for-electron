@@ -1,9 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as Actions from '../../../store/actions';
+import { withStyles } from '@material-ui/core';
 import { bindActionCreators } from "redux";
-import Todo from "../organisms/Todo";
-import ComponentSample from '../organisms/ComponentSamples';
+import ViewTodo from "../organisms/ViewTodo";
+import AddTodo from "../organisms/AddTodo";
+import Bar from "../organisms/Bar";
+
+const styles = {
+  viewTodo:{
+    margin: '10vh 0 15vh 0'
+  },
+  addButton:{
+    backgroundColor: '#fff',
+  }
+}
 
 class Root extends React.Component {
   constructor(props) {
@@ -14,10 +25,16 @@ class Root extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    const {classes} = this.props;
     return (
       <div>
-        <Todo/>
+        <Bar />
+        <div className={classes.viewTodo}>
+          <ViewTodo/>
+        </div>
+        <div className={classes.addButton}>
+          <AddTodo/>
+        </div>
       </div>
     );
   }
@@ -29,4 +46,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(Actions, dispatch)
 });
-export default connect(mapStateToProps, mapDispatchToProps)(Root);
+
+const styleRoot = withStyles(styles)(Root);
+export default connect(mapStateToProps, mapDispatchToProps)(styleRoot);
