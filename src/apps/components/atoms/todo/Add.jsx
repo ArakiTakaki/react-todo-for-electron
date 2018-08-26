@@ -7,11 +7,11 @@ function AddItem(props) {
   const { func } = props;
   return (
     <Button
+      mini
       name="todo_add"
       variant="fab"
       color="primary"
-      onClick={func}
-      mini>
+      onClick={func}>
       <Add />
     </Button>
   );

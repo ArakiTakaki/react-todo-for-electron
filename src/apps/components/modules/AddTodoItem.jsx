@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 function TodoListItem(props) {
   const { event, content } = props
   return (
-    <form>
+    <div>
       <Todo.InputText func={event} value={content} />
       <Todo.Add func={event} />
-    </form>
+    </div>
   )
 }
 

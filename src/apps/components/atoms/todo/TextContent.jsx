@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 function TextContent (props) {
   const {state, children} = props;
   return(
-    <Typography valiant="headline" noWrap={state}>
+    <Typography
+      valiant="title"
+      noWrap={state}
+      style={{ lineHeight:'inherit' }}>
       {children}
     </Typography>
   );

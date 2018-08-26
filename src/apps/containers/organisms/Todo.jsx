@@ -14,16 +14,18 @@ class Todo extends React.Component {
 
   onTodoEvent(event) {
     const name = event.currentTarget.name;
-    console.log(name);
+    let idx;
     const {actions} = this.props;
     switch (name) {
       case TodoAct.ADD:
         actions.addTodo();
         break;
       case TodoAct.CHECK:
+        idx = event.currentTarget.value;
+        actions.changeTodoCheck(idx);
         break;
       case TodoAct.DELETE:
-        const idx = event.currentTarget.parentNode.name;
+        idx = event.currentTarget.value;
         actions.deleteTodo(idx);
         break;
       case TodoAct.INPUT_TEXT:
@@ -44,10 +46,10 @@ class Todo extends React.Component {
           todoKey={todo.key}
           state={todo.state}
           content={todo.content}
+          detailState={todo.detailState}
           event={this.onTodoEvent} />
       )
     }
-    console.log(this.props)
     return (
       <div>
         {list}

@@ -1,16 +1,36 @@
 import React from 'react';
 import * as Todo from '../atoms/todo';
 import PropTypes from 'prop-types';
+import { Grid, withStyles } from '@material-ui/core';
+
+const styles = {
+  root: {
+    alignItems: "center",
+  }
+}
 
 function TodoListItem(props) {
-  const { todoKey, content, event, state } = props
+  const { todoKey, content, event, state, detailState, classes } = props
   return (
-    <div name={todoKey}>
-      <Todo.Check
-        func={event} />
-      <Todo.TextContent state={state}>{content}</Todo.TextContent>
-      <Todo.Delete
-        func={event} />
+    <div>
+      <Grid container spacing={16} className={classes.root}>
+        <Grid item xs={2}>
+          <Todo.Check
+            todoKey={todoKey}
+            func={event}
+            state={state} />
+        </Grid>
+        <Grid item xs={8} >
+          <Todo.TextContent state={detailState}>
+            {content}
+          </Todo.TextContent>
+        </Grid>
+        <Grid item xs={2}>
+          <Todo.Delete
+            todoKey={todoKey}
+            func={event} />
+        </Grid>
+      </Grid>
     </div>
   )
 }
@@ -19,7 +39,8 @@ TodoListItem.propTypes = {
   event: PropTypes.func,
   state: PropTypes.bool,
   todoKey: PropTypes.number,
+  detailState: PropTypes.bool,
   content: PropTypes.string
 }
 
-export default TodoListItem;
+export default withStyles(styles)(TodoListItem);

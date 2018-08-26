@@ -4,21 +4,22 @@ import { DeleteOutline } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 
 function Delete (props) {
-  const {func} = props;
+  const {func, todoKey} = props;
   return(
     <IconButton
       name="todo_delete"
+      value={todoKey}
       variant="fab"
       color="primary"
-      onClick={func}
-      mini>
+      onClick={func}>
       <DeleteOutline />
     </IconButton>
   );
 }
 
 Delete.propTypes = {
-  func: PropTypes.func
+  func: PropTypes.func,
+  name: PropTypes.number
 };
 
 export default Delete;
