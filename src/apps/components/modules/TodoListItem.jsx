@@ -2,21 +2,24 @@ import React from 'react';
 import * as Todo from '../atoms/todo';
 import PropTypes from 'prop-types';
 
-export default TodoListItem = (props) => {
-  const { content, event, state } = props
+function TodoListItem(props) {
+  const { todoKey, content, event, state } = props
   return (
-    <div>
+    <div name={todoKey}>
       <Todo.Check
         func={event} />
-      <Todo.Text state={state}>{content}</Todo.Text>
+      <Todo.TextContent state={state}>{content}</Todo.TextContent>
       <Todo.Delete
-        func={event}/>
+        func={event} />
     </div>
   )
 }
 
 TodoListItem.propTypes = {
-  event: PropTypes.func.isRequired,
-  state: PropTypes.bool.isRequired,
-  content: PropTypes.string.isRequired
+  event: PropTypes.func,
+  state: PropTypes.bool,
+  todoKey: PropTypes.number,
+  content: PropTypes.string
 }
+
+export default TodoListItem;

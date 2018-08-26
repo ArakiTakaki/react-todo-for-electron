@@ -2,18 +2,20 @@ import React from 'react';
 import { TextField } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
-const InputText = (props) => {
-  const {func} = props;
+function InputText (props){
+  const {func, value} = props;
   return(
     <TextField
-      name="todo_content"
+      name="todo_value"
       label="TODO"
-      margin="nomal"
+      margin="normal"
+      value={value}
       onChange={func}/>
   );
 }
 
 InputText.propTypes = {
-  func: PropTypes.func.isRequired
+  func: PropTypes.func,
+  value: PropTypes.string
 }
 export default InputText;

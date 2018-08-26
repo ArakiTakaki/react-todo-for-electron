@@ -1,24 +1,24 @@
 import React from 'react';
-import { IconButton } from '@material-ui/core';
-import { DeleteOutline } from '@material-ui/icons';
+import { Button } from '@material-ui/core';
+import { Add } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 
- const Check = (props) => {
+function Check (props) {
   const {func} = props;
   return(
-    <IconButton
+    <Button
       name="todo_check"
-      valiant="fab"
+      variant="fab"
       color="primary"
       onClick={func}
       mini>
-      <DeleteOutline />
-    </IconButton>
+      <Add/>
+    </Button>
   );
 }
 
 Check.propTypes = {
-  func: PropTypes.func.isRequired
-};
+  func: PropTypes.func
+}
 
 export default Check;

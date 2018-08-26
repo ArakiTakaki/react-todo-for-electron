@@ -3,22 +3,22 @@ import { Button } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
 import PropTypes from 'prop-types'
 
-const AddItem = (props) => {
+function AddItem(props) {
   const { func } = props;
-  return(
+  return (
     <Button
       name="todo_add"
-      valiant="fab"
+      variant="fab"
       color="primary"
       onClick={func}
       mini>
-      <Add/>
+      <Add />
     </Button>
   );
 }
 
 Add.propTypes = {
-  func: PropTypes.func.isRequired
+  func: PropTypes.func
 }
 
 export default AddItem;

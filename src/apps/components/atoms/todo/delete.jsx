@@ -1,24 +1,24 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
-import { Add } from '@material-ui/icons';
+import { IconButton } from '@material-ui/core';
+import { DeleteOutline } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 
-const Delete = (props) => {
+function Delete (props) {
   const {func} = props;
   return(
-    <Button
+    <IconButton
       name="todo_delete"
-      valiant="fab"
+      variant="fab"
       color="primary"
       onClick={func}
       mini>
-      <Add/>
-    </Button>
+      <DeleteOutline />
+    </IconButton>
   );
 }
 
 Delete.propTypes = {
-  func: PropTypes.func.isRequired
-}
+  func: PropTypes.func
+};
 
 export default Delete;

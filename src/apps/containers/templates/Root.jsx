@@ -2,8 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import * as Actions from '../../../store/actions';
 import { bindActionCreators } from "redux";
-import ViewTodos from "../organisms/ViewTodos";
-import AddTodo from "../organisms/AddTodo";
+import Todo from "../organisms/Todo";
 import ComponentSample from '../organisms/ComponentSamples';
 
 class Root extends React.Component {
@@ -18,9 +17,7 @@ class Root extends React.Component {
     console.log(this.props)
     return (
       <div>
-        <ViewTodos/>
-        <AddTodo/>
-        <ComponentSample/>
+        <Todo/>
       </div>
     );
   }
