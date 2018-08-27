@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as Actions from '../../../store/actions';
 import AddTodoItem from '../../components/modules/AddTodoItem';
 import * as TodoAct from '../../components/atoms/todo';
+import { Button } from '@material-ui/core';
 
 class AddTodo extends React.Component {
   constructor(props) {
@@ -29,9 +30,15 @@ class AddTodo extends React.Component {
 
   render() {
     return (
-      <AddTodoItem
-        event={this.onTodoEvent}
-        content={this.props.state.tmp_todo} />
+      <React.Fragment>
+        <Button
+          onClick={this.props.actions.saveTodoCookie}>
+          Add
+        </Button>
+        <AddTodoItem
+          event={this.onTodoEvent}
+          content={this.props.state.tmp_todo} />
+      </React.Fragment>
     )
   }
 

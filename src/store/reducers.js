@@ -1,5 +1,5 @@
 import * as Actions from './actions';
-import * as Cookies from 'js-cookie';
+import * as Util from '../util';
 
 const reducer = (state, action) => {
 
@@ -19,6 +19,8 @@ const reducer = (state, action) => {
       break;
 
     case (Actions.GET_TODO):
+      const tmp = Util.Cookies.getCookie("todo");
+      if (tmp !== undefined) state = tmp;
       break;
 
     case (Actions.CHANGE_TODO_CHECK):
@@ -40,6 +42,7 @@ const reducer = (state, action) => {
       break;
 
     case (Actions.SAVE_TODO_COOKIE):
+      Util.Cookies.setCookie('todo', state);
       break;
 
     default:
