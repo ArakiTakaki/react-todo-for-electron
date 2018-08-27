@@ -18,4 +18,7 @@ export const SAVE_TODO_COOKIE = Symbol('actions');
 export const saveTodoCookie = () =>({ type: SAVE_TODO_COOKIE });
 
 export const LOAD_TODO_COOKIE = Symbol('actions');
-export const loadTodoCookie = () =>({ type: LOAD_TODO_COOKIE });
+export const loadTodoCookie = () => ({ type: LOAD_TODO_COOKIE });
+
+export const DELETE_TODO_COOKIE = Symbol('actions');
+export const deleteTodoCookie = () => ({ type: DELETE_TODO_COOKIE });

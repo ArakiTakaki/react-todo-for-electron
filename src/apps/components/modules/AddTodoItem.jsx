@@ -8,6 +8,8 @@ const styles = {
     verticalAlign: 'top',
     position:'fixed',
     bottom: 0,
+    right: 0,
+    paddingBottom: 20,
     background: '#fff'
   }
 }
@@ -19,10 +21,10 @@ function AddTodoItem(props) {
         alignItems="flex-end"
         justify="space-around"
         container>
-        <Grid item xs={7}>
+        <Grid item xs={9}>
           <Todo.InputText func={event} value={content} />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <Todo.Add func={event} />
         </Grid>
       </Grid>

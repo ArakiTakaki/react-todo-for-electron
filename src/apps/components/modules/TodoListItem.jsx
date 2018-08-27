@@ -29,12 +29,12 @@ function TodoListItem(props) {
             func={event}
             state={state} />
         </Grid>
-        <Grid item xs={7} >
+        <Grid item xs={8} >
           <Todo.TextContent state={detailState}>
             {content}
           </Todo.TextContent>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <Todo.Delete
             todoKey={todoKey}
             func={event} />
