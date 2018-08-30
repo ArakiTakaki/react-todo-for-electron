@@ -8,7 +8,6 @@ function TextContent (props) {
     <Typography
       variant="headline"
       noWrap={state}
-      fullWidth
       style={{ lineHeight:'inherit' }}>
       {children}
     </Typography>

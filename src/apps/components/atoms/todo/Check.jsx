@@ -7,7 +7,7 @@ function Check (props) {
   return(
     <Checkbox
       name="todo_check"
-      value={todoKey}
+      value={String(todoKey)}
       variant="fab"
       color="primary"
       checked={state}
@@ -16,7 +16,6 @@ function Check (props) {
 }
 
 Check.propTypes = {
-  todoKey: PropTypes.number,
   func: PropTypes.func
 }
 
